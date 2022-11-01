@@ -5,9 +5,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { HiMenu } from 'react-icons/hi';
 // Custom Imports
-import Sidebar from './components/Sidebar';
-import UserProfile from './components/UserProfile';
-import Pins from './components/Pins';
+import Sidebar from './Components/Sidebar';
+import UserProfile from './Components/UserProfile';
+import Pins from './Components/Pins';
 import { userQuery } from '../../utils/data';
 // Sanity Imports
 import { client } from '../../client';
