@@ -1,7 +1,7 @@
 // React Imports
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// React Google Imports
+// React Google Sign in Imports
 import GoogleLogin from 'react-google-login';
 import { gapi } from 'gapi-script';
 // React Icons
@@ -9,7 +9,7 @@ import { FcGoogle } from 'react-icons/fc';
 // Images Imports
 import logo from '../../assets/logowhite.png';
 import shareVideo from '../../assets/share.mp4';
-// Custom Imports
+// Sanity Imports
 import { client } from '../../client';
 
 const Login = () => {
