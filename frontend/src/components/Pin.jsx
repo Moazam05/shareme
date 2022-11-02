@@ -52,6 +52,10 @@ const Pin = ({ pin }) => {
     }
   };
 
+  const deletePin = function (id) {
+    client.delete(id).then(() => window.location.reload());
+  };
+
   return (
     <div className='m-2'>
       <div
@@ -102,9 +106,47 @@ const Pin = ({ pin }) => {
                 </button>
               )}
             </div>
+            <div className='flex justify-between items-center gap-2 w-full'>
+              {destination && (
+                <a
+                  href={destination}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:100 hover:shadow-md'
+                >
+                  <BsFillArrowUpRightCircleFill />
+                  {destination.slice(7, 20)}
+                </a>
+              )}
+
+              {postedBy?._id === user.googleId && (
+                <button
+                  type='button'
+                  className='bg-white p-2 opacity-70 hover:opacity-100 font-bold text-dark text-base rounded-3xl hover:shadow-md outline-none'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    deletePin(_id);
+                  }}
+                >
+                  <AiTwotoneDelete />
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>
+
+      <Link
+        to={`user-profile/${postedBy?._id}`}
+        className='flex gap-2 mt-2 items-center'
+      >
+        <img
+          src={postedBy?.image}
+          alt='user-profile'
+          className='w-8 h-8 rounded-full object-cover'
+        />
+        <p className='font-semibold capitalize'>{postedBy?.userName}</p>
+      </Link>
     </div>
   );
 };
