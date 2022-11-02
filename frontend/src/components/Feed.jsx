@@ -10,7 +10,6 @@ import Spinner from './Spinner';
 
 const Feed = () => {
   const { categoryId } = useParams();
-  // console.log(categoryId);
 
   // States
   const [loading, setLoading] = useState(false);

@@ -21,7 +21,6 @@ const categories = [
 ];
 
 const Sidebar = ({ user, closeToggle }) => {
-  //   console.log('user', user);
   const handleCloseSidebar = function () {
     if (closeToggle) closeToggle(false);
   };
