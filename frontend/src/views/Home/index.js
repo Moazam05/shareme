@@ -8,11 +8,13 @@ import { HiMenu } from 'react-icons/hi';
 import Sidebar from './Components/Sidebar';
 import UserProfile from './Components/UserProfile';
 import Pins from './Components/Pins';
-import { userQuery } from '../../utils/data';
 // Sanity Imports
 import { client } from '../../client';
 // Image Imports
 import logo from '../../assets/logo.png';
+// Utils Function Imports
+import { userQuery } from '../../utils/data';
+import { fetchUser } from '../../utils/fetchUser';
 
 const Home = () => {
   const scrollRef = useRef(null);
@@ -22,10 +24,7 @@ const Home = () => {
   const [user, setUser] = useState(null);
 
   // local storage
-  const userInfo =
-    localStorage.getItem('user') !== 'undefined'
-      ? JSON.parse(localStorage.getItem('user'))
-      : localStorage.clear();
+  const userInfo = fetchUser();
 
   // getting username and id
   useEffect(() => {
