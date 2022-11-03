@@ -115,7 +115,9 @@ const Pin = ({ pin }) => {
                   className='bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:100 hover:shadow-md'
                 >
                   <BsFillArrowUpRightCircleFill />
-                  {destination.slice(7, 20)}
+                  {destination.length > 15
+                    ? `${destination.slice(0, 16)}...`
+                    : destination}
                 </a>
               )}
 
