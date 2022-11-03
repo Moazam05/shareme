@@ -13,7 +13,7 @@ import { client } from '../../client';
 // Image Imports
 import logo from '../../assets/logo.png';
 // Utils Function Imports
-import { userQuery } from '../../utils/data';
+import { userQuery } from '../../utils/sanity';
 import { fetchUser } from '../../utils/fetchUser';
 
 const Home = () => {

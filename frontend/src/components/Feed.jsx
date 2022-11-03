@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // Sanity Imports
 import { client } from '../client';
-import { feedQuery, searchQuery } from '../utils/data';
+import { feedQuery, searchQuery } from '../utils/sanity';
 // Custom Imports
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
